@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "kb-cli"
+version = "0.1.0"
+description = ""
+authors = ["Joseph P. <joseph.pena.q@joseph.pena.q>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
