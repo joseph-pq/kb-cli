@@ -7,7 +7,11 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
+typer = "^0.13.0"
+pyfzf = "^0.3.1"
 
+[tool.poetry.scripts]
+kb = "kb_cli.__main__:app"
 
 [build-system]
 requires = ["poetry-core"]
