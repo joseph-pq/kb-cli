@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.12"
 typer = "^0.13.0"
 pyfzf = "^0.3.1"
+pyyaml = "^6.0.2"
+pydantic = "^2.9.2"
 
 [tool.poetry.scripts]
 kb = "kb_cli.__main__:app"
