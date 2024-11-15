@@ -9,9 +9,9 @@ Just run pip or uv to install the package:
 
 ```bash
 # using uvx
-uv tool install git+https://github.com/joseph-pq/kb-cli.git
+uv tool install kb-cli
 # using pipx
-pipx install git+https://github.com/joseph-pq/kb-cli.git
+pipx install kb-cli
 ```
 
 ## Usage
