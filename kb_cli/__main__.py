@@ -7,6 +7,8 @@ from rich import print
 import typer
 import yaml
 
+from kb_cli import __version__
+
 app = typer.Typer()
 
 
@@ -49,6 +51,11 @@ def search():
     print("choice:", choice[0])
     print("-" * 20)
     print(result)
+
+
+@app.command()
+def version():
+    print(__version__)
 
 
 if __name__ == "__main__":
