@@ -1,9 +1,13 @@
-import pyfzf
-import pydantic
-from pathlib import Path
 import os
-import yaml
+from pathlib import Path
+
+import pydantic
+import pyfzf
 from rich import print
+import typer
+import yaml
+
+app = typer.Typer()
 
 
 class Config(pydantic.BaseModel):
@@ -17,7 +21,16 @@ with open(CONFIG_FP, "r") as f:
     CONFIG = Config.model_validate(yaml.load(f, Loader=yaml.FullLoader))
 
 
-def app():
+@app.command()
+def add(fp: Path):
+    CONFIG.fps.append(fp)
+    with open(CONFIG_FP, "w") as f:
+        yaml.dump(CONFIG.model_dump(mode="json"), f)
+    print("Added", fp)
+
+
+@app.command()
+def search():
     kb = {}
     for fp in CONFIG.fps:
         with open(fp, "r") as f:
